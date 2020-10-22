@@ -13,12 +13,12 @@ if exists("b:loaded_cpplint_ftplugin")
 endif
 let b:loaded_cpplint_ftplugin=1
 
-let s:cpplint_cmd="cpplint --linelength=100"
+let g:cpplint_cmd="cpplint --repository=. --linelength=100"
 
 if !exists("*Cpplint()")
     function Cpplint()
-        " if !executable(s:cpplint_cmd)
-        "     echoerr "File " . s:cpplint_cmd . " not found. Please install it first."
+        " if !executable(g:cpplint_cmd)
+        "     echoerr "File " . g:cpplint_cmd . " not found. Please install it first."
         "     return
         " endif
 
@@ -36,7 +36,7 @@ if !exists("*Cpplint()")
 
         " perform the grep itself
         let &grepformat="%f:%l: %m"
-        let &grepprg=s:cpplint_cmd
+        let &grepprg=g:cpplint_cmd
         silent! grep! %
 
         " restore grep settings
