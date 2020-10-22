@@ -17,10 +17,10 @@ let s:cpplint_cmd="cpplint --linelength=100"
 
 if !exists("*Cpplint()")
     function Cpplint()
-        if !executable(s:cpplint_cmd)
-            echoerr "File " . s:cpplint_cmd . " not found. Please install it first."
-            return
-        endif
+        " if !executable(s:cpplint_cmd)
+        "     echoerr "File " . s:cpplint_cmd . " not found. Please install it first."
+        "     return
+        " endif
 
         set lazyredraw   " delay redrawing
         cclose           " close any existing cwindows
