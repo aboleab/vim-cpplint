@@ -13,7 +13,7 @@ if exists("b:loaded_cpplint_ftplugin")
 endif
 let b:loaded_cpplint_ftplugin=1
 
-let g:cpplint_cmd="cpplint --repository=. --linelength=100"
+let g:cpplint_cmd="cpplint --repository=.. --linelength=100"
 
 if !exists("*Cpplint()")
     function Cpplint()
